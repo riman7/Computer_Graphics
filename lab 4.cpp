@@ -15,33 +15,7 @@ int main() {
 
     // Initializes the graphics system
     initgraph(&gd, &gm, (char *)"");
-    x= 0;
-    y = r;
-    p0 = 5.0/4.0-r;
-	
-	for(i=0; y>=x; i++){
-		putpixel(xc + x, yc + y, WHITE);
-        putpixel(xc - x, yc + y, WHITE);
-        putpixel(xc + x, yc - y, WHITE);
-        putpixel(xc - x, yc - y, WHITE);
-        putpixel(xc + y, yc + x, WHITE);
-        putpixel(xc - y, yc + x, WHITE);
-        putpixel(xc + y, yc - x, WHITE);
-        putpixel(xc - y, yc - x, WHITE);
-
-//		line(i, 100, 200, 200);
-		if(p0<0){
-			x = x +1;
-			y = y;
-			p0 = p0 + 2* x +1;
-		}
-		else{
-			x = x +1;
-			y = y - 1;
-			p0 = p0 + 2* x +1 - 2 *y;
-		}
-
-	}
+    
 	
  getch();
 
