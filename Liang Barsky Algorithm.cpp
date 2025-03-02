@@ -3,18 +3,16 @@
 #include <conio.h>
 #include <math.h>
 int main(){
-    int p[4], q[4], i, gd = DETECT, gm, x1, y1, x2, y2, xwmax, xwmin, ywmax, ywmin;
+    int gd = DETECT, gm, x1, y1, x2, y2;
+    int a[2][2];
     int dx, dy;
     float t1=0, t2=1, r;
-	printf("Enter the coordinates of clipping window (xmin ymin xmax ymax): ");
-	scanf("%d%d%d%d", &xwmin, &ywmin, &xwmax, &ywmax);
     
     printf("Enter the value of starting and ending coordinate of line: ");
     scanf("%d%d%d%d", &x1, &y1, &x2, &y2);
     // Initializes the graphics system
     initgraph(&gd, &gm, (char *)"");
-    cleardevice();  // Clears the screen and sets up the coordinate system
-
+    
     dx = x2 - x1;
     dy = y2 - y1;
     
