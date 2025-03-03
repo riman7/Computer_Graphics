@@ -3,15 +3,21 @@
 #include <conio.h>
 #include <math.h>
 int main(){
-    int gd = DETECT, gm, x1, y1, x2, y2;
+    int gd = DETECT, gm, x1, y1, x2, y2, xwmin, xwmax, ywmin, ywmax, i;
     int a[2][2];
     int dx, dy;
     float t1=0, t2=1, r;
+    int p[4], q[4];
+    
+    printf("Enter clipping window coordinates (xwmin ywmin xwmax ywmax): ");
+    scanf("%d%d%d%d", &xwmin, &ywmin, &xwmax, &ywmax);
     
     printf("Enter the value of starting and ending coordinate of line: ");
     scanf("%d%d%d%d", &x1, &y1, &x2, &y2);
     // Initializes the graphics system
     initgraph(&gd, &gm, (char *)"");
+    
+    rectangle(xwmin, ywmin, xwmax, ywmax);
     
     dx = x2 - x1;
     dy = y2 - y1;
@@ -35,6 +41,9 @@ int main(){
             }
             else{
             	//The Liang-Barsky algorithm itself doesn't explicitly include a special method for handling parallel lines.
+            	printf("The Liang-Barsky algorithm itself doesn't explicitly include a special method for handling parallel lines.");
+            	closegraph();
+                return 0;
 			}
         }
 		else{
